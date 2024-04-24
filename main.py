@@ -18,7 +18,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS person (
 ); 
 
  """)
-# esto es un comentario
+
 cur.execute("""INSERT INTO  person (id, name, age, gender) VALUES
 (1, 'Allan', 37, 'm'),
 (2, 'Jose',37, 'm'),
