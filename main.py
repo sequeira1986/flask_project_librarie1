@@ -1,7 +1,6 @@
 import psycopg2
 from flask import Flask, jsonify, request
 
-
 conn = psycopg2.connect(
     dbname='brgeicfqg8kyazonirom',
     user='ulwgoripw8ejfilgoi5u',
@@ -16,8 +15,10 @@ cur.execute("""CREATE TABLE IF NOT EXISTS person (
     name VARCHAR(255),
     age INT,
     gender CHAR
-);
+); 
+
  """)
+# esto es un comentario
 cur.execute("""INSERT INTO  person (id, name, age, gender) VALUES
 (1, 'Allan', 37, 'm'),
 (2, 'Jose',37, 'm'),
@@ -34,12 +35,10 @@ cur.execute("""SELECT * FROM  person WHERE age > 50; """)
 for row in cur.fetchall():
     print(row)
 
-
 sql = cur.mogrify("""SELECT * FROM person WHERE starts_with(name, %s) AND age < %s;""", ("J", 50))
 print(sql)
 cur.execute(sql)
 print(cur.fetchall())
-
 
 conn.commit()
 cur.close()
