@@ -9,6 +9,7 @@ conn = psycopg2.connect(
     host='brgeicfqg8kyazonirom-postgresql.services.clever-cloud.com',
     port=50013
 )
+
 cur = conn.cursor()
 cur.execute("""CREATE TABLE IF NOT EXISTS person (
     id INT PRIMARY KEY,
